@@ -1,0 +1,325 @@
+
+
+/* ---------------------------------------- */
+/* ==            SUMMARY              */
+/*---------------------------------------- */
+
+/* L		- 1 - */
+/* L		- 2 - */
+/* L		- 3 - */
+
+/* ---------------------------------------- */
+/* ==       COLOR CODES           */
+/*---------------------------------------- */
+/*
+
+*/
+
+/* ---------------------------------------- */
+/* == DÉFINITIONS DES POLICES*/
+/*---------------------------------------- */
+
+
+
+
+
+/* ---------------------------------------- */
+/* == ÉLÉMENTS PRINCIPAUX */
+/*---------------------------------------- */
+
+body {
+	background-color: lavenderblush;
+	margin: auto;
+	text-align: center;
+}
+
+
+
+
+/* ---------------------------------------- */
+/* ==            HEADER                */
+/*---------------------------------------- */
+
+h1 {
+	font-family: 'Lakki Reddy', cursive;
+	font-size: 3em;
+	font-weight: 100;
+	margin: 20px 0 0 0;
+	color: #0e0653;
+	/*background: radial-gradient(#e66465, #9198e5);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;	*/
+}	
+
+header {
+	background-color: rgb(243,233,241);
+
+} 
+
+i.fa-shopping-cart {
+	background: #D38312;  /* fallback for old browsers */
+	background: linear-gradient(to left, #6304cfa6, #d34f12); 
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent; 
+	-moz-text-fill-color: transparent;
+	background-clip: text;
+	padding-right: 12px;
+}
+
+nav {
+	list-style: none;
+	display: flex;
+	font-family: 'Roboto', sans-serif;
+    justify-content: space-between;
+    font-size: larger;
+    padding: 5px;
+
+}
+
+.nomlogo {
+	display: flex;
+    justify-content: center;
+	align-items: baseline;
+	
+}
+
+
+a:hover {  
+	
+}
+
+a {  
+	text-decoration: none
+}
+
+a:visited {
+	text-decoration: none;
+	color:#000000;
+	}
+
+img {
+	width: 85%;
+	
+	
+}
+
+.imgpdt {
+	width: 50%;
+	display: inline-block;
+}
+
+h2 {
+	font-family: 'Gloria Hallelujah', cursive;
+	color: #cf6060;
+}
+
+h3 {
+	font-family: 'Roboto', sans-serif;
+}
+p {
+	font-family: 'Roboto', sans-serif;
+}
+
+li {
+	list-style: none;
+}
+/* ---------------------------------------- */
+/* ==          Article                 */
+/*---------------------------------------- */
+main {
+	text-align: center;
+	list-style: none;
+	margin: 0;
+	padding-bottom: 350px;
+
+}
+
+article {
+	text-align: center;
+	list-style: none;
+	margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+	padding-bottom: 80px;
+}
+
+
+.prodindex {
+	width: 100%;
+}
+
+.buttonindex {
+	width: 300px;
+	background-color: #cf6060;
+	color: white;
+	height: 35px;
+	font-size: inherit;
+}
+
+.imgindex {
+	height: 250px;
+    width: 300px;
+}
+/*article {
+	display: flex;
+	flex-direction: column;
+}
+
+article a {
+	display: flex;
+	justify-content: center;
+	
+}
+
+h3 {
+	font-family: arial;
+	font-weight: inherit;
+}
+*/
+
+img{
+
+	opacity: 1;
+	filter: alpha(opacity=100);
+	padding: 30px;
+  }
+  img:hover
+  {
+	opacity: 0.3;
+	filter: alpha(opacity=30);
+  }
+  #customers {
+	font-family: Arial, Helvetica, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+  }
+  
+  #customers td, #customers th {
+	border: 1px solid #ddd;
+	padding: 8px;
+  }
+  
+  #customers tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #customers tr:hover {background-color: #ddd;}
+  
+  #customers th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: left;
+	background-color: #1504aa;
+	color: white;
+  }
+
+td {
+	text-align: center;
+}
+  input  {
+	width: 70%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	box-sizing: border-box;
+	border: 3px solid #ccc;
+	-webkit-transition: 0.5s;
+	transition: 0.5s;
+	outline: none;
+  }
+  
+  input:focus {
+	border: 3px solid #555;
+  }
+
+label {
+	display: flex;
+	flex-direction: column;
+	font-family: roboto;
+}
+
+.cart-section {
+	font-size: x-large;
+}
+.addCart {
+	width: 300px;
+    height: 30px;
+	background-color: #cf6060;
+	font-size: medium;
+    color: ghostwhite;
+}
+
+select{
+	height: 30px;
+}
+ /* .aligntab {
+	  text-align: center;
+  }
+/*
+article {
+	position: relative;
+	max-width: 800px; /* Maximum width */
+	/*margin: 0 auto; /* Center it */
+  /*}
+  */
+  
+
+  
+
+/* ---------------------------------------- */
+/* ==            FOOTER                    */
+/*---------------------------------------- */
+
+h4 {
+	text-align: center;
+	font-family: 'Lakki Reddy', cursive;
+	font-size: 3em;
+	background-color:rgb(243,233,241) ;
+	bottom: 0;
+	margin: auto;
+	padding: 1em;
+}
+
+
+
+
+
+/* ---------------------------------------- */
+/* ==            media query ========================================================                    */
+/*---------------------------------------- */
+
+@media only screen and (min-width: 768px) {
+
+
+	article .content {
+		position: initial;
+	}
+	article .content1 {
+		position: initial;
+		background:#cd748b;
+	}
+	article .content2 {
+		position: initial;
+		background: #f8fe367d;
+	}
+	article .content3 {
+		position: initial;
+		background: #c6ddf4;
+	}
+	h3 {
+		
+		font-size: 1em;
+	}
+	h1 {
+		font-size: 3em;
+	}
+	nav {
+		font-size: x-large;
+	}
+	img {
+		box-shadow: none;
+		padding: 0%;
+		
+	}
+	.prodindex{
+		width: 33.3%;
+
+	}
+}
