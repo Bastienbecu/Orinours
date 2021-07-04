@@ -201,6 +201,13 @@ function updateNumberArticles() {
 
 // =====================================================================================
 
+//validation formulaire 
+const order = document.getElementById("validate");
+const regexName = /^(([a-zA-ZÀ-ÿ]+[\s\-]{1}[a-zA-ZÀ-ÿ]+)|([a-zA-ZÀ-ÿ]+))$/;
+const regexCity = /^(([a-zA-ZÀ-ÿ]+[\s\-]{1}[a-zA-ZÀ-ÿ]+)|([a-zA-ZÀ-ÿ]+)){1,10}$/;
+const regexMail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]{2,}\.[a-z]{2,4}$/;
+const regexAddress = /^(([a-zA-ZÀ-ÿ0-9]+[\s\-]{1}[a-zA-ZÀ-ÿ0-9]+)){1,10}$/;
+
 //Récupère les valeurs de l'input dans contact__form
 //Récupère les id des produits du panier dans le tableau products
 //L'objet contact et le tableau products sont envoyé dans la function postOrder
@@ -212,7 +219,18 @@ function sendform() {
         city: document.getElementById("city").value,
         email: document.getElementById("email").value
     };
-
+    
+  if (
+        (regexMail.test(contact.email) == true) &
+        (regexName.test(contact.firstName) == true) &
+        (regexName.test(contact.lastName) == true) &
+        (regexCity.test(contact.city) == true) &
+        (regexAddress.test(contact.address) == true) 
+        
+    )
+    
+        event.preventDefault();
+    
     let products = [];
     if (localStorage.getItem('anyItem') !== null) {
         let productTab = JSON.parse(localStorage.getItem('anyItem'));
