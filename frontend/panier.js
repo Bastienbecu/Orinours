@@ -63,23 +63,23 @@ function displayQuantity() {
                 <form class="contact__form" action="post" type="submit">
                     <div class="details__form">
                         <label for="firstname">PRENOM</label>
-                        <input type="text" name="firstname" id="firstname"  maxlength="25" pattern="[a-zA-ZÀ-ÿ]{2,}" required />
+                        <input type="text" name="firstname" id="firstname"  maxlength="25" />
                     </div>
                     <div class="details__form">
                         <label for="name">NOM</label>
-                        <input type="text" name="name" id="name"  maxlength="25" pattern="[a-zA-ZÀ-ÿ]{2,}" required />
+                        <input type="text" name="name" id="name"  maxlength="25" />
                     </div>
                     <div class="details__form">
                         <label for="address">ADRESSE</label>
-                        <input type="text" name="address" id="address"  maxlength="50" required />
+                        <input type="text" name="address" id="address"  maxlength="50"  />
                     </div>
                     <div class="details__form">
                         <label for="city">VILLE</label>
-                        <input type="text" name="city" id="city"  pattern="[A-Za-z]{2,}" required />
+                        <input type="text" name="city" id="city"  pattern="[A-Za-z]{2,}"  />
                     </div>
                     <div class="details__form">
                         <label for="email">EMAIL</label>
-                        <input type="email" name="email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+[.][a-z]{2,4}" required />
+                        <input type="email" name="email" id="email"  />
                     </div>
                     <button class="validate" id="submit" >
                         <p>Valider votre commande</p>
@@ -220,17 +220,45 @@ function sendform() {
         email: document.getElementById("email").value
     };
 
-    if (
-        (regexMail.test(contact.email) == true) &
-        (regexName.test(contact.firstName) == true) &
-        (regexName.test(contact.lastName) == true) &
-        (regexCity.test(contact.city) == true) &
-        (regexAddress.test(contact.address) == true) 
-        
-    )
-    
-    
-        event.preventDefault();
+    let errors = [];
+
+    if (regexName.test(contact.firstName) == false) {
+        errors.push("Veuillez fournir un prenom valide.");
+    }
+
+    if (regexName.test(contact.lastName) == false) {
+        errors.push("Veuillez fournir un nom de famille valide.");
+    }
+
+    if (regexAddress.test(contact.address) == false) {
+        errors.push("Veuillez fournir une adresse valide.");
+    }
+
+    if (regexCity.test(contact.city) == false) {
+        errors.push("Veuillez fournir un nom de ville valide.");
+    }
+
+    if (regexMail.test(contact.email) == false) {
+        errors.push("Veuillez fournir un nom de famille valide.");
+    }
+
+    let errorDiv = document.querySelector(".contact__errors");
+    if (errors.length > 0) {
+        if (!errorDiv) {
+            const contactForm = document.querySelector(".contact__form");
+            const submitButton = document.querySelector(".contact__form #submit");
+            errorDiv = document.createElement("div");
+            errorDiv.classList.add("contact__errors");
+            contactForm.insertBefore(errorDiv, submitButton);
+        }
+        errorDiv.innerHTML = errors.join("<br>");
+        errorDiv.style.display = "block";
+        return;
+    } else {
+        if (errorDiv) {
+            errorDiv.style.display = "none";
+        }
+    }
 
     let products = [];
     if (localStorage.getItem('anyItem') !== null) {
@@ -276,3 +304,4 @@ function postOrder(contactItems) {
         console.log(e);
     })
 }
+
