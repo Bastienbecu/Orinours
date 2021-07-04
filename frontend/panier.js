@@ -239,7 +239,7 @@ function sendform() {
     }
 
     if (regexMail.test(contact.email) == false) {
-        errors.push("Veuillez fournir un nom de famille valide.");
+        errors.push("Veuillez fournir un mail valide.");
     }
 
     let errorDiv = document.querySelector(".contact__errors");
