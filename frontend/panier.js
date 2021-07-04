@@ -117,7 +117,7 @@ function displayQuantity() {
             cancelMyOrdered();
         });
 
-        //validation formulaire                                    *****************************
+           //validation formulaire                                    *****************************
         const form = document.querySelector(".contact__form");
         form.addEventListener('submit', e => {
             e.preventDefault();
